@@ -16,6 +16,11 @@
  */
 
 #include "vim.h"
+#include <unistd.h>
+
+static void hide_cursor() {
+    out_str("\033[?25l");  // ANSI para esconder cursor
+}
 
     void
 ui_write(char_u *s, int len, int console UNUSED)
